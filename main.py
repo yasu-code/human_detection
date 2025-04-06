@@ -27,7 +27,7 @@ def update_detection_time():
     #===========================
     now = datetime.datetime.now()
     now_JST = now + datetime.timedelta(hours=9)
-    print('動態検知: ' + now_JST.strftime('%Y-%m-%d %H:%M:%S'))
+    print('detection: ' + now_JST.strftime('%Y-%m-%d %H:%M:%S'))
     lambda_client = boto3.client('lambda')
     # 環境変数全てを指定しないと消えてしまうので注意
     lambda_client.update_function_configuration(
